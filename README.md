@@ -8,7 +8,7 @@
 
 <br/>
 
-![Topologia firewall]([..\assets\topologia-firewall.jpg](https://github.com/peagaaa/Iptables-firewall/blob/main/assets/topologia-firewall.jpg))
+![Topologia firewall](https://github.com/peagaaa/Iptables-firewall/blob/main/assets/topologia-firewall.jpg)
 
 # Desafio proposto: 
 
