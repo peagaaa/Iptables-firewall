@@ -8,7 +8,7 @@
 
 <br/>
 
-![Topologia firewall](assets\topologia-firewall.jpg)
+![Topologia firewall](.\assets\topologia-firewall.jpg)
 
 # Desafio proposto: 
 
