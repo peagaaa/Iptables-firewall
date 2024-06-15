@@ -10,6 +10,10 @@
 
 ![Topologia firewall](https://github.com/peagaaa/Iptables-firewall/blob/main/assets/topologia-firewall.jpg)
 
+<p align="center">
+  <img src="https://github.com/peagaaa/Iptables-firewall/blob/main/assets/topologia-firewall.jpg" alt="...">
+</p>
+
 # Desafio proposto: 
 
 <br/>
