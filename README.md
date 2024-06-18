@@ -127,6 +127,8 @@ iptables -I FORWARD -m string --algo bm --string "tiktok.com" -j DROP
 iptables -I OUTPUT -m string --algo bm --string "tiktok.com" -j 
 ```
 
+Explicação:
+
 Peculiaridade: Se no navegador já tenha acessado serviço antes de aplicar as regras, o bloqueio não irá funcionar, entretanto isso é facilmente resolvido apagando o histórico do navegador, isso ocorre devido a memória cache do navegador.
 
 # Bloqueio de site específico (forma mais try hard):
@@ -134,4 +136,25 @@ Peculiaridade: Se no navegador já tenha acessado serviço antes de aplicar as r
 # Bloqueio de ataque DDOS
 
 # Configuração de rede
+
+Vamos lá, como o Iptables atuaria como um firewall na rede?
+
+A ideia da utilização de um firewall seria de que todo o tráfego da rede passe por ele antes de ir para a rede interna ou seja encaminhado para a internet. No meu exemplo optei por utilizar uma VM, então eu teria uma máquina como cliente e um servidor que estaria hospedando o meu firewall, a topologia nesse caso ficaria assim: 
+
+<p align="center">
+  <img src="https://github.com/peagaaa/Iptables-firewall/blob/main/assets/top.png" alt="Topologia firewall">
+</p>
+
+o meu servidor deverá ter duas placas de rede uma para se comunicar com a rede interna (Lan | com ip fixo) e outra para se comunicar com a rede externa (Wan | internet | DHCP ativo).
+
+No VirtualBox após habilitar a segunda placa de rede, é necessário configura-las a LAN como Host only e a WAN como bridge.
+
+Também há a necessidade de realizar algumas configurações no servidor linux, são elas:
+
+----
+
+Após essas configurações no servidor vamos partir para a máquina do cliente, na configuração de rede iremos configurar o gateway com o IP do servidor, a marcara de sub-rede como pardrão `255.255.255.0` e o IP como um endereço dentro da faixa especificada. 
+
+
+
 
