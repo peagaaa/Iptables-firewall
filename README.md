@@ -109,7 +109,7 @@ Basta configurar o DNS direto na placa de rede do computador, dessa forma:
  mas utilizando o iptables o fica dessa forma:
 
 <p align="center">
-  <img src="https://github.com/peagaaa/Iptables-firewall/blob/main/assets/DNS-BLOCK.png" alt="Comando iptables bloquear site adulto">
+  <img src="https://github.com/peagaaa/Iptables-firewall/blob/main/assets/comandoBlock.png" alt="Comando iptables bloquear site adulto">
 </p>
 
 ----
