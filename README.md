@@ -112,20 +112,26 @@ Basta configurar o DNS direto na placa de rede do computador, dessa forma:
   <img src="https://github.com/peagaaa/Iptables-firewall/blob/main/assets/comandoBlock.png" alt="Comando iptables bloquear site adulto">
 </p>
 
-----
-----
-
 # Bloqueio de site específico com iptables:
 
+Para cumprir com esse requisito, após muitas pesquisas consegui achar um artigo que fala sobre bloqueio a determinados serviços com o Iptables:
 
-explicação:
+[Link do artigo!](https://dejano.comunidades.net/bloqueando-facebookhttps-via-iptables)
 
-Peculiaridade: Se no navegador já tenha sido feito o acesso ao serviço antes de aplicar as regras o bloqueio não funciona entretanto isso é facilmente resolvido apagando o histórico do navegador, isso ocorre devido a memória cache do navegador.
+De exemplo iremos bloquear o acesso ao TikTok
+
+Segue os comandos: 
+
+```
+iptables -I FORWARD -m string --algo bm --string "tiktok.com" -j DROP
+iptables -I OUTPUT -m string --algo bm --string "tiktok.com" -j 
+```
+
+Peculiaridade: Se no navegador já tenha acessado serviço antes de aplicar as regras, o bloqueio não irá funcionar, entretanto isso é facilmente resolvido apagando o histórico do navegador, isso ocorre devido a memória cache do navegador.
 
 # Bloqueio de site específico (forma mais try hard):
 
-
-
 # Bloqueio de ataque DDOS
 
-# Configuração de rede'
+# Configuração de rede
+
