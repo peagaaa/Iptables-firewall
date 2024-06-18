@@ -1,20 +1,14 @@
 # O que é um firewall?
 
-<br/>
-
 É um dispositivo de segurança (podendo ser um ser um hardware ou software) que monitora e controla o tráfego de rede, permitindo ou bloqueando ( o tráfego de pacotes de dados ou em portas) com base em regras predeterminadas, ele atua como uma barreira de segurança.
 
 ## Onde fica localizado em uma topologia?
 
-<br/>
-
 <p align="center">
-  <img src="https://github.com/peagaaa/Iptables-firewall/blob/main/assets/topologia-firewall.jpg" alt="...">
+  <img src="https://github.com/peagaaa/Iptables-firewall/blob/main/assets/topologia-firewall.jpg" alt="Imagem topologia firewall">
 </p>
 
 # Desafio proposto: 
-
-<br/>
 
 Escolher uma distribuição Linux e uma solução gratuita de Firewall para cumprir os requisitos:
 
@@ -23,13 +17,7 @@ Escolher uma distribuição Linux e uma solução gratuita de Firewall para cump
 - Bloqueio de ataque DDOS 
 - Fazer a configuração de rede local
 
-<br/>
-
----
-
-## Stack utilizada
-
-<br/>
+#  Stack utilizada
 
 **Aplicativo para simular uma máquina virtual:** VirtualBox
 
@@ -37,17 +25,11 @@ Escolher uma distribuição Linux e uma solução gratuita de Firewall para cump
 
 **Firewall:** Iptables
 
-<br/>
-
----
-
 # Iptables:
-
-<br/> 
 
 Solução de Firewall que monitora o tráfego de rede decidindo quais conexões/ pacotes serão permitidos e/ou bloqueados, sua particularidade é que ele faz isso utilizando tabelas com conjunto de regras chamadas cadeias (chains).
 
-### Tabelas:
+## Tabelas:
 
 #### Filter:
  
@@ -65,9 +47,7 @@ usada para modificar os cabeçalhos dos pacotes. É usada principalmente para ma
 
 Essa tabela é usada para controle e rastreamento de conexões.
 
----
-
-### Chains: 
+## Chains: 
 
 #### Prerouting: 
 
@@ -91,49 +71,46 @@ Usada para manipular pacotes de saída após o roteamento ter sido decidido sem 
 
 # Relação entre tabela x cadeia
 
-<br/>
-
-![Relação tabela x cadeia iptables](../Firewall\assets\iptables.jpg)
+<p align="center">
+  <img src="https://github.com/peagaaa/Iptables-firewall/blob/main/assets/iptables.jpg" alt="Imagem relação tabela x cadeia">
+</p>
 
 # Sintaxe básica:
 
-<p style="text-align: center"> iptables -A (chain) -i (interface) -p (protocol) (tcp/udp) -s (source) --dport (port)  -j (target)​​<p\>
-​
-<br/>
+` iptables -A (chain) -i (interface) -p (protocol) (tcp/udp) -s (source) --dport (port)  -j (target) `
 
 # Comandos de exemplos:
 
-- iptables -A INPUT -p tcp --dport 443 -j ACCEPT​
-- iptables -A INPUT -i lo -j ACCEPT​
-- iptables -P INPUT DROP​
-- iptables -A INPUT -s 203.0.113.0 -j DROP​
-- iptables -A INPUT -j LOG --log-prefix "Pacote descartado: " --log-level 4​
-- iptables -A INPUT -s 203.0.113.0 -j DROP
-
----
-
-<br/>
+```
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT​
+iptables -A INPUT -i lo -j ACCEPT​
+iptables -P INPUT DROP​
+iptables -A INPUT -s 203.0.113.0 -j DROP​
+iptables -A INPUT -j LOG --log-prefix "Pacote descartado: " --log-level 4​
+iptables -A INPUT -s 203.0.113.0 -j DROP
+```
 
 <p style="text-align: center">Solução dos desafios propostos<p\>
-
-<br/>
 
 # Bloqueio de site adulto:
 
 A forma mais rápida de fazer isso é utilizando de servidores DNS de que já possuem esse bloqueio, os mais utilizados são o Family shield e o da cloudflare:
 
-![ADCACD](../Firewall\assets\DNS-BLOCK.png)
+<p align="center">
+  <img src="https://github.com/peagaaa/Iptables-firewall/blob/main/assets/DNS-BLOCK.png" alt="Servidores de DNS para bloqueio de site adulto">
+</p>
 
 Basta configurar o DNS direto na placa de rede do computador, dessa forma:
 
+<p align="center">
+  <img src="https://github.com/peagaaa/Iptables-firewall/blob/main/assets/mudarDNSplacaderede.png" alt="Alteração de DNS placa de rede Win 10">
+</p>
 
+ mas utilizando o iptables o fica dessa forma:
 
-
-
-
- mas utilizando o iptables ficaria mais ou menos assim:
-
-![](../Firewall\assets\DNS-BLOCK2.png)
+<p align="center">
+  <img src="https://github.com/peagaaa/Iptables-firewall/blob/main/assets/DNS-BLOCK.png" alt="Comando iptables bloquear site adulto">
+</p>
 
 ----
 ----
