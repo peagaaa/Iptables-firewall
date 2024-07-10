@@ -127,7 +127,12 @@ iptables -I FORWARD -m string --algo bm --string "tiktok.com" -j DROP
 iptables -I OUTPUT -m string --algo bm --string "tiktok.com" -j 
 ```
 
-Explicação:
+para bloquear o  acesso a outros serviços basta trocar o nome dentro das aspas duplas, exemplo de bloqueio do facebook:
+
+```
+iptables -I FORWARD -m string --algo bm --string "facebook.com" -j DROP
+iptables -I OUTPUT -m string --algo bm --string "facebook.com" -j 
+```
 
 Peculiaridade: Se no navegador já tenha acessado serviço antes de aplicar as regras, o bloqueio não irá funcionar, entretanto isso é facilmente resolvido apagando o histórico do navegador, isso ocorre devido a memória cache do navegador.
 
