@@ -1,6 +1,6 @@
 # O que é um firewall?
 
-É um dispositivo de segurança (podendo ser um ser um hardware ou software) que monitora e controla o tráfego de rede, permitindo ou bloqueando ( o tráfego de pacotes de dados ou em portas) com base em regras predeterminadas, ele atua como uma barreira de segurança.
+É um dispositivo de segurança (podendo ser um ser um hardware ou software) que monitora e controla o tráfego de rede, permitindo ou bloqueando (o tráfego de pacotes de dados ou em portas) com base em regras predeterminadas, ele atua como uma barreira de segurança.
 
 ## Onde fica localizado em uma topologia?
 
