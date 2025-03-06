@@ -17,7 +17,7 @@ Escolher uma distribuição Linux e uma solução gratuita de Firewall para cump
 - Bloqueio de ataque DDOS 
 - Fazer a configuração de rede local
 
-#  Stack utilizada
+#  Técnologias utilizadas
 
 **Aplicativo para simular uma máquina virtual:** VirtualBox
 
