@@ -19,7 +19,7 @@ Escolher uma distribuição Linux e uma solução gratuita de Firewall para cump
 
 #  Técnologias utilizadas
 
-**Aplicativo para simular uma máquina virtual:** VirtualBox
+**Aplicativo para simular os computadores cliente e servidor:** VirtualBox
 
 **Distribuição linux:** Debian
 
